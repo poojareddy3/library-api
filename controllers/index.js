@@ -203,6 +203,19 @@ async function deleteUser(req, res) {
     }
 }
 
+async function deleteLibrarian(req, res) {
+    try {
+        const { id } = req.params;
+        const deleted = await User.findByIdAndDelete(id);
+        if(deleted){
+            return res.status(200).send('Librarian deleted');
+        }
+        throw new Error('Librarian not found!')
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
 async function deleteBorrowedBook(req, res) {
     try {
         const { id } = req.params;
@@ -233,5 +246,6 @@ module.exports = {
     updateBorrowedBook,
     deleteBook,
     deleteUser,
+    deleteLibrarian,
     deleteBorrowedBook
 }

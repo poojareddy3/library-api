@@ -14,7 +14,7 @@ const Address = new Schema({
 const Librarian = new Schema(
     {
         name: { type: String, required: true},
-        address: { Address },
+        address: Address,
         phone: { type: Number, required: true},
         email: { type: String, required: true}
     },

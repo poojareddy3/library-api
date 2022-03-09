@@ -4,7 +4,6 @@ const User = require('../models/user');
 const Book = require('../models/book');
 const Librarian = require('../models/librarian');
 
-
 async function createBook(req, res) {
     try {
        const book = await new Book(req.body);
@@ -23,6 +22,7 @@ async function createUser(req, res) {
         return res.status(500).json({error: error.message});
     }
 }
+
 async function createBorrowedBooks(req, res) {
     try {
        const borrowedBook = await new BorrowInfo(req.body);
@@ -32,7 +32,6 @@ async function createBorrowedBooks(req, res) {
         return res.status(500).json({error: error.message});
     }
 }
-
 
 async function getAllBooks(req, res){
     try {

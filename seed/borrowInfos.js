@@ -34,64 +34,64 @@ const main = async () => {
     //  await Book.insertMany(books);
     console.log('Created Books!');
        
-        const user1= await new User({
-                uname: "Poojitha Vangala", 
-                    address:
-                    { 
-                        street: "Continental Ct",
-                        city: "Monroe Twp",
-                        state: "NJ",
-                        zip: 08831
-                     },
-                phone: 7328237527,
-                email: "poojithavangala@gmail.com",
-                maxBooksLimit: 3
-            })
-            user1.save();
+    const user1= await new User({
+        uname: "Laura Grady", 
+            address:
+            { 
+                street: "Thomson Rd",
+                city: "Monroe Twp",
+                state: "NJ",
+                zip: 08831
+             },
+        phone: 7395601559,
+        email: "laura.gradly@gmail.com",
+        maxBooksLimit: 3
+    })
+    user1.save();
 
-            const user2 = await new User({ 
-                uname: "Swetha Kolli", 
-                address: 
-                    { 
-                        street: "Casey Dr",
-                        city: "Monroe Twp",
-                        state: "NJ",
-                        zip: 08831
-                     },
-                phone: 7322890331,
-                email: "kns.482gmail.com",
-                maxBooksLimit: 3
-            })
-            user2.save();
+    const user2 = await new User({ 
+        uname: "Jenny Mills", 
+        address: 
+            { 
+                street: "Ross Street",
+                city: "Monroe Twp",
+                state: "NJ",
+                zip: 08831
+             },
+        phone: 4096970352,
+        email: "millsjen@gmail.com",
+        maxBooksLimit: 3
+    })
+    user2.save();
 
-            const user3 = await new User({ 
-                uname: "Vineela Kosuri", 
-                address: 
-                    { 
-                        street: "Gateway Blvd",
-                        city: "Monroe Twp",
-                        state: "NJ",
-                        zip: 08831
-                     },
-                phone: 5085587499,
-                email: "kosuri.vineela@gmail.coom",
-                maxBooksLimit: 3
-            })
+    const user3 = await new User({ 
+        uname: "Ron Logan", 
+        address: 
+            { 
+                street: "Frost Lane",
+                city: "Monroe Twp",
+                state: "NJ",
+                zip: 08831
+             },
+        phone: 6193848971,
+        email: "ronlogan@gmail.coom",
+        maxBooksLimit: 3
+    })
 
-            user3.save();
+    user3.save();
 
-            const librarian = await new Librarian({
-                name: "Silpa Mederametla",
-                address: 
-                    { 
-                        street: "Davino Dr",
-                        city: "Monroe Twp",
-                        state: "NJ",
-                        zip: 08831
-                     },
-                phone: 8482136081,
-                email: "silpa.mederametla@gmail.com"
-            })
+    const librarian = await new Librarian({
+        name: "Shawn Chang",
+        address: 
+            { 
+                street: "Heath Rd",
+                city: "Monroe Twp",
+                state: "NJ",
+                zip: 08831
+             },
+        phone: 2406511440,
+        email: "scheng@gmail.com"
+    })
      
             const borrowedBooks = [
                 { 

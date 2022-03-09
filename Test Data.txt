@@ -1,0 +1,42 @@
+Sample Test Data for CRUD:
+
+For New Book:
+
+{
+"ISBN": 1617292427, 
+"title": "Express in Action", 
+"author": 
+{
+"first_name": "Evan", 
+"last_name": "Hahn"
+}, 
+"publisher_name": "Manning", 
+"year_published": 2016
+}
+
+For New User:
+
+
+{
+   "uname": "Jack Winters", 
+   "address":
+   { 
+       "street": "Farmer Ln",
+       "city": "Monroe Twp",
+       "state": "NJ",
+       "zip": 08831
+    },
+    "phone": 4097979132,
+    "email": "jack.winters@gmail.com",
+    "maxBooksLimit": 3
+}
+
+
+For BorrowInfo TestData:
+{  
+    "borrowBook_id": "book._id",           // need to give the id of the book borrowed
+    "user_id": "user._id",                 // id of the user who borrowed the book
+    "librarian_id": "librarian._id",       //librarian id who issued the book
+    "issueDate": "Mar 1,2022",
+    "dueDate": "Mar 7, 2022"
+}

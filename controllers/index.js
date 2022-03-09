@@ -206,7 +206,7 @@ async function deleteUser(req, res) {
 async function deleteLibrarian(req, res) {
     try {
         const { id } = req.params;
-        const deleted = await User.findByIdAndDelete(id);
+        const deleted = await Librarian.findByIdAndDelete(id);
         if(deleted){
             return res.status(200).send('Librarian deleted');
         }

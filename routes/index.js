@@ -22,6 +22,7 @@ router.delete('/users/:id', controllers.deleteUser);
 
 //endpoints for librarian schema CRUD
 router.get('/librarian', controllers.getAllLibrarian);
+router.put('/librarian/:id', controllers.updateLibrarian);
 
 //endpoints for borrowInfo schema CRUD
 router.post('/borrowInfo', controllers.createBorrowedBooks);

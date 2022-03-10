@@ -90,8 +90,7 @@ const Librarian = new Schema(
 )
 ```
 ### BorrowInfo Schema
-```
-const BorrowInfo = new Schema(
+```const BorrowInfo = new Schema(
     {
         borrowBook_id: { type: Schema.Types.ObjectId, ref: 'book'},
         user_id: { type: Schema.Types.ObjectId, ref: 'user'},

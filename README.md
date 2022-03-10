@@ -18,8 +18,8 @@ Base Heroku URL for the API: [https://library-api-crud.herokuapp.com/api/]
 
 /books \
 /users \
-librarian \
-/borrowInfo \
+/librarian \
+/borrowInfo
 
 For books,users and borrowInfo Endpoints, you can find the data with ID. 
 

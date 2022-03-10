@@ -6,20 +6,20 @@ This is a Library Crud Api.
 
 ## Technologies
 
-Express, MongoDB and Mongoose, Node.JS
+Express, MongoDB, Node.JS and Mongoose
 
 ## Instructions to run the application:
 
-Below are the routes links to execute the applications. Open on the links below in a Web Browser for GET Requests. All the other CRUD links should be on Postman.
+Use the Endpoints with the below heroku Base URL to get the data in any Web Browser or Postman.
 
 Base Heroku URL for the API: [https://library-api-crud.herokuapp.com/api/]
 
 ## EndPoints
 
-/books
-/users
-/librarian
-/borrowInfo
+//books/
+//users
+/librarian/
+//borrowInfo
 
 For books,users and borrowInfo Endpoints, you can find the data with ID. For Example,  [https://library-crud-api.herokuapp.com/api/books/6227b652589f62bf5ebd99be]
 
@@ -90,7 +90,8 @@ const Librarian = new Schema(
 )
 ```
 ### BorrowInfo Schema
-```const BorrowInfo = new Schema(
+```
+const BorrowInfo = new Schema(
     {
         borrowBook_id: { type: Schema.Types.ObjectId, ref: 'book'},
         user_id: { type: Schema.Types.ObjectId, ref: 'user'},

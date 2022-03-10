@@ -27,7 +27,6 @@ For books,users and borrowInfo Endpoints, you can find the data with ID. For Exa
 ## Schemas:
 
 ### Book Schema:
-
 ```
 const Author = new Schema(
     {
@@ -46,11 +45,9 @@ const Book = new Schema(
     },
     { timestamps: true }
 )
-
 ```
-
 ### User Schema:
-
+```
 const Address = new Schema({
     street: { type: String, required: true },
     city: { type: String, required: true },
@@ -70,10 +67,9 @@ const User = new Schema(
     },
     { timestamps: true}
 )
-
-
+```
 ### Librarian Schema:
-
+```
 const Address = new Schema({
     street: { type: String, required: true },
     city: { type: String, required: true },
@@ -92,10 +88,9 @@ const Librarian = new Schema(
     },
     { timestamps: true}
 )
-
-
+```
 ### BorrowInfo Schema
-
+```
 const BorrowInfo = new Schema(
     {
         borrowBook_id: { type: Schema.Types.ObjectId, ref: 'book'},
@@ -106,3 +101,4 @@ const BorrowInfo = new Schema(
     },
     { timestamps: true}
 )
+```

@@ -27,9 +27,9 @@ For running locally:
     * npm i express
     * npm i nodemon
     * add below line to package.json's scripts tag:
-        "scripts": {
-                "start": "nodemon server.js"
-                }
+        "scripts": { \
+                "start": "nodemon server.js" \
+                } \
     * node/seed/borrowInfos.js
     * npm start
 

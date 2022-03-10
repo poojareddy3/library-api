@@ -29,7 +29,7 @@ For running locally:
     * add below line to package.json's scripts tag:
         "scripts": { \
                 "start": "nodemon server.js" \
-                } \
+                } 
     * node/seed/borrowInfos.js
     * npm start
 
@@ -37,7 +37,7 @@ For running locally:
 
 ### End Points for Books CRUD:
 
-Sample data for all schemas is in the Test Data.txt file.
+#### Sample data for all schemas is in the Test Data.txt file.
 
 Create Book: /books
 

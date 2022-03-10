@@ -14,38 +14,92 @@ Below are the routes links to execute the applications. Open on the links below 
 
 Base Heroku URL for the API: [https://library-api-crud.herokuapp.com/api/]
 
-### End Points for Books CRUD:
+## EndPoints
 
-Create Books: [https://library-api-crud.herokuapp.com/api/books]
+/books
+/users
+/librarian
+/borrowInfo
 
-Get AllBooks: [https://library-api-crud.herokuapp.com/api/books]
+For books,users and borrowInfo Endpoints, you can find the data with ID. For Example,  [https://library-crud-api.herokuapp.com/api/books/6227b652589f62bf5ebd99be]
 
-Get Book By Id: [https://library-api-crud.herokuapp.com/api/books/:id]
 
-Update Book By ID: [https://library-api-crud.herokuapp.com/api/books/:id]
+## Schemas:
 
-Delete Book By ID: [https://library-api-crud.herokuapp.com/api/books/:id]
+### Book Schema:
 
-### EndPoints for User CRUD:
+const Author = new Schema(
+    {
+        first_name: { type: String, required: true },
+        last_name: { type: String, required: true}
+    }
+)
 
-Create User: [https://library-api-crud.herokuapp.com/api/users]
+const Book = new Schema(
+    {
+        ISBN: { type: Number, required: true },
+        title: { type: String, required: true },
+        author: Author,
+        publisher_name: { type: String, required: true},
+        year_published: { type: Number, required: true }
+    },
+    { timestamps: true }
+)
 
-Get All Users: [https://library-api-crud.herokuapp.com/api/users]
+### User Schema:
 
-Get User By ID: [https://library-api-crud.herokuapp.com/api/users/:id]
+const Address = new Schema({
+    street: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zip: { type: Number, required: true },
+},
+{ timestamps: true }
+)
 
-Update User By ID: [https://library-api-crud.herokuapp.com/api/users/:id]
+const User = new Schema(
+    {
+        uname: { type: String, required: true },
+        address: Address,
+        phone: { type: Number, required: true},
+        email: { type: String, required: true },
+        maxBooksLimit: { type: Number, required: true},
+    },
+    { timestamps: true}
+)
 
-Delete User By ID:  [https://library-api-crud.herokuapp.com/api/users/:id]
 
-### End Points for BorrowInfo CRUD:
+### Librarian Schema:
 
-Create BorrowBookInfo: [https://library-api-crud.herokuapp.com/api/booksborrowInfo]
+const Address = new Schema({
+    street: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zip: { type: Number, required: true }
+},
+{ timestamps: true }
+);
 
-Get All BorrowInfo: [https://library-api-crud.herokuapp.com/api/borrowInfo]
+const Librarian = new Schema(
+    {
+        name: { type: String, required: true},
+        address: Address,
+        phone: { type: Number, required: true},
+        email: { type: String, required: true}
+    },
+    { timestamps: true}
+)
 
-Get BorrowInfo By Id: [https://library-api-crud.herokuapp.com/api/borrowInfo/:id]
 
-Update BorrowInfo By ID: [https://library-api-crud.herokuapp.com/api/borrowInfo/:id]
+### BorrowInfo Schema
 
-Delete BorrowInfo By ID: [https://library-api-crud.herokuapp.com/api/borrowInfo/:id]
+const BorrowInfo = new Schema(
+    {
+        borrowBook_id: { type: Schema.Types.ObjectId, ref: 'book'},
+        user_id: { type: Schema.Types.ObjectId, ref: 'user'},
+        librarian_id: { type: Schema.Types.ObjectId, ref: 'librarian'},
+        issueDate: { type: String, required: true},
+        dueDate: { type: String, required: true },
+    },
+    { timestamps: true}
+)

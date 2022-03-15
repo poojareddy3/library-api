@@ -3,6 +3,7 @@ const BorrowInfo = require('../models/borrowInfo');
 const User = require('../models/user');
 const Book = require('../models/book');
 const Librarian = require('../models/librarian');
+// @CrossOrigin(origins = "http://127.0.0.1:5500");
 
 async function createBook(req, res) {
     try {
@@ -22,7 +23,6 @@ async function createUser(req, res) {
         return res.status(500).json({error: error.message});
     }
 }
-
 async function createBorrowedBooks(req, res) {
     try {
        const borrowedBook = await new BorrowInfo(req.body);
@@ -32,6 +32,7 @@ async function createBorrowedBooks(req, res) {
         return res.status(500).json({error: error.message});
     }
 }
+
 
 async function getAllBooks(req, res){
     try {
@@ -142,23 +143,6 @@ const updateUser = (req, res) => {
     }
 }
 
-const updateLibrarian = (req, res) => {
-    try {
-        const { id } = req.params;
-        Librarian.findByIdAndUpdate(id, req.body, { new: true}, (err, librarian)=> {
-            if(err !== null){
-                console.log(err, 'error');
-                res.status(404).send(err.message);
-            } else {
-                console.log(librarian);
-                res.json(librarian);
-            }
-        })
-    } catch (error) {
-        return res.status(500).send(error.message);
-    }
-}
-
 const updateBorrowedBook = (req, res) => {
     try {
         const { id } = req.params;
@@ -203,19 +187,6 @@ async function deleteUser(req, res) {
     }
 }
 
-async function deleteLibrarian(req, res) {
-    try {
-        const { id } = req.params;
-        const deleted = await Librarian.findByIdAndDelete(id);
-        if(deleted){
-            return res.status(200).send('Librarian deleted');
-        }
-        throw new Error('Librarian not found!')
-    } catch (error) {
-        return res.status(500).send(error.message);
-    }
-}
-
 async function deleteBorrowedBook(req, res) {
     try {
         const { id } = req.params;
@@ -242,10 +213,8 @@ module.exports = {
     getBorrowedBookById,
     updateBook,
     updateUser,
-    updateLibrarian,
     updateBorrowedBook,
     deleteBook,
     deleteUser,
-    deleteLibrarian,
     deleteBorrowedBook
 }
